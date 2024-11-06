@@ -1,0 +1,123 @@
+Feedforward Neural Network (MLP): A type of deep learning model where data flows in one direction from input to output. In this assignment, the MLP model is used for digit classification on the MNIST dataset.
+
+Keras and TensorFlow: Keras, as an API within TensorFlow, allows easy model-building. TensorFlow is the underlying platform enabling machine learning with its powerful tools for defining and training neural networks.
+
+MNIST Dataset: A widely-used dataset containing 28x28 grayscale images of handwritten digits, labeled from 0 to 9. It's often used for testing classification models due to its simplicity and high-quality data.
+
+Network Architecture: The model consists of an input layer (Flatten layer) that converts image matrices into vectors, followed by a hidden Dense layer with ReLU activation for learning features, and an output Dense layer with softmax activation for classification.
+
+Training and Evaluation: Using Stochastic Gradient Descent (SGD) for optimization, the model is trained and compiled with the sparse_categorical_crossentropy loss function, appropriate for multi-class classification. The model’s performance is measured in terms of accuracy, and it is visualized through graphs of loss and accuracy over epochs.
+
+Model Generalization: Achieving over 90% accuracy is a key objective, with focus on methods to improve generalization, meaning the model should perform well on unseen data, not just the training set.
+
+Evaluation Metrics: Final performance is assessed through accuracy and visual tools like confusion matrices, highlighting the classification accuracy per digit.
+
+
+
+In this assignment, a Feedforward Neural Network (MLP) will be built and trained to classify handwritten digits from the MNIST dataset using Keras with TensorFlow. The steps include loading the MNIST dataset, defining the neural network architecture with one hidden layer, training the model using Stochastic Gradient Descent (SGD), and evaluating its performance. Key objectives are to understand model training and evaluation, achieve over 90% accuracy on the dataset, and research methods to improve generalization. TensorFlow's Keras API simplifies constructing the model, where a Flatten layer converts each image to a vector and Dense layers with ReLU and softmax activations perform the classification.
+
+The model is compiled with the sparse_categorical_crossentropy loss function, ideal for multi-class problems, and is trained over 10 epochs, showing progressively improved accuracy and reduced loss, indicating effective learning. Results are visualized through graphs of training loss and accuracy, and the evaluate() method is used to check the model’s accuracy on test data. With a confusion matrix, the classification performance across each digit can be observed. Overall, this exercise showcases building a neural network model from scratch, training it, and achieving desired accuracy in image classification.
+In this assignment, we’re tasked with building an image classification model using a Convolutional Neural Network (CNN) on the MNIST dataset, which contains 28x28 grayscale images of handwritten digits. The project is divided into four stages: data loading and preprocessing, model architecture definition, model training, and performance evaluation. Initially, the dataset is scaled to a range of 0-1 for faster model convergence. The CNN architecture begins with convolutional and pooling layers to extract image features, followed by fully connected layers for classification. The model is trained using an SGD optimizer with cross-entropy loss, targeting >90% accuracy. After training, the model’s performance is tested on unseen data to validate its generalization. This assignment focuses on practical deep learning application skills, aiming to achieve high accuracy while improving the model’s confidence in predictions.
+
+Key points and definitions for the MNIST CNN image classification assignment:
+
+Convolutional Neural Network (CNN): A type of neural network particularly effective for image processing tasks. It uses convolutional layers to automatically learn spatial hierarchies in images by detecting edges, textures, and complex shapes.
+
+MNIST Dataset: A collection of 60,000 training and 10,000 test images of handwritten digits (0-9), widely used as a benchmark for image classification models. Each image is 28x28 pixels in grayscale.
+
+Data Preprocessing: A step to prepare the data for training, involving scaling pixel values to a 0-1 range. This helps the model train faster and prevents issues caused by large input values.
+
+Convolutional and Pooling Layers: The core layers in a CNN. Convolutional layers apply filters to input images to extract features, while Pooling layers reduce the dimensionality, retaining only the most essential information and reducing computational cost.
+
+Fully Connected Layers: Dense layers at the end of a CNN where all nodes are connected. These layers interpret the features extracted by the convolutional layers and make predictions based on the learned patterns.
+
+Activation Function: A mathematical function applied to the output of each layer, with ReLU (Rectified Linear Unit) commonly used in convolutional layers to add non-linearity, and Softmax in the final layer for outputting probabilities for each class.
+
+Loss Function: The function that measures how well the model’s predictions match the actual labels. For this classification task, cross-entropy loss is used to quantify prediction error.
+
+Optimizer: An algorithm that adjusts the model's weights to minimize the loss function. Here, SGD (Stochastic Gradient Descent) is used to iteratively improve model accuracy through backpropagation.
+
+These elements form the backbone of a CNN model, helping it to learn from the MNIST dataset and accurately classify handwritten digits.
+
+
+Here are the important definitions from the assignment:
+
+Autoencoder: A type of neural network used for unsupervised learning, designed to compress data into a lower-dimensional representation (latent space) through an Encoder and then reconstruct it back to the original input using a Decoder.
+
+Encoder: The part of an autoencoder that compresses the input data into a latent representation (lower-dimensional space).
+
+Decoder: The part of the autoencoder that reconstructs the original input data from the latent representation.
+
+Reconstruction Error: The difference between the original input and its reconstructed version. In anomaly detection, data points with high reconstruction errors are flagged as anomalies.
+
+Anomaly Detection: The process of identifying rare or unusual data points that deviate significantly from the majority of the data, often using machine learning algorithms like autoencoders.
+
+Latent Representation: The compressed, lower-dimensional encoding of the input data produced by the encoder part of the autoencoder.
+
+Threshold: A specific value set for the reconstruction error, above which data points are considered anomalies.
+
+StandardScaler: A preprocessing technique used to scale the data so that each feature has a mean of 0 and a standard deviation of 1, improving the performance of many machine learning models.
+
+Precision: The fraction of true positive predictions (correctly identified anomalies) out of all positive predictions made by the model.
+
+Recall: The fraction of true positive predictions (correctly identified anomalies) out of all actual anomalies in the dataset.
+
+Accuracy: The fraction of correct predictions (both true positives and true negatives) made by the model out of all predictions.
+
+This assignment focuses on using an Autoencoder for anomaly detection by training it to recognize normal patterns in data and flagging deviations as anomalies. An Autoencoder is a type of neural network that compresses data through an Encoder into a lower-dimensional latent representation and reconstructs it via a Decoder. When trained on normal data, it learns to accurately recreate these patterns, minimizing reconstruction error. However, when encountering anomalies, the reconstruction error is higher, allowing these instances to be flagged as abnormal. The ECG dataset (with labels 0 for anomalies and 1 for normal) is used here, specifically scaling the Time and Amount columns with StandardScaler for better model performance. After training, a threshold for reconstruction error is set to classify new data as either normal or anomalous. This threshold-based approach helps to identify anomalies effectively. Evaluating model performance through metrics like accuracy, precision, and recall is essential, as imbalanced data may result in high accuracy but lower precision and recall. To improve these metrics, exploring variations in the model’s architecture, adding features, or adjusting hyperparameters can be beneficial.
+
+
+Important Definitions and Concepts for Assignment 5 (CBOW Model)
+Natural Language Processing (NLP): NLP is a field of artificial intelligence that focuses on the interaction between computers and human language, aiming to enable machines to understand, interpret, and respond to human language in a meaningful way.
+
+Word Embedding: Word embeddings are a type of word representation that allows words to be represented as vectors in a continuous vector space. These vectors capture semantic meanings, and words with similar meanings tend to have similar vector representations.
+
+Word2Vec: Word2Vec is a popular model for generating word embeddings. It uses shallow neural networks to learn word representations from large text datasets. The two main techniques in Word2Vec are:
+
+Continuous Bag of Words (CBOW): Predicts a target word based on its surrounding context words.
+Skip-gram: Predicts the context words based on a given target word.
+Applications of Word Embedding in NLP:
+
+Sentiment Analysis: Analyzing the sentiment of a given text.
+Machine Translation: Translating text from one language to another.
+Information Retrieval: Improving search engine results based on semantic similarity.
+Text Classification: Categorizing text into predefined labels.
+CBOW Architecture: In the Continuous Bag of Words (CBOW) model, the goal is to predict a target word (center word) given a set of context words. The context words are used as input, and the model is trained to predict the center word. The CBOW model aggregates context words (surrounding words) to predict the target word.
+
+Input and Output to CBOW Model:
+
+Input: Context words (surrounding words in a window) are the input to the CBOW model.
+Output: The target word (center word) is predicted by the CBOW model.
+Tokenizer: A tokenizer is a tool that breaks down a text into smaller pieces, such as words or phrases. In NLP, a tokenizer is used to split a sentence or document into a list of words.
+
+Window Size Parameter in CBOW: The window size refers to the number of words on either side of the target word that are considered as context. A larger window size includes more context, which may improve the quality of word representations but may also increase the complexity.
+
+Embedding Layer in Keras: The Embedding layer in Keras is a trainable layer that learns dense vector representations for words. It converts words into their corresponding word embeddings, which are optimized during training.
+
+Lambda Layer in Keras: The Lambda layer in Keras is used to apply custom operations on the input data. It allows for the creation of new layers where specific computations can be implemented in the model architecture.
+Yield(): In Python, yield is used in a function to make it a generator. A generator function returns an iterator, which can be used to iterate through a sequence of results lazily, one at a time, without needing to store them in memory.
+
+Steps for Implementing CBOW Model
+Dataset & Libraries:
+
+Use a custom English dataset (5-10 sentences).
+Import necessary libraries like keras, gensim, numpy, and others.
+Preprocessing & Tokenization:
+
+Preprocess the dataset by tokenizing words.
+Fit the tokenized data to a tokenizer and prepare the vocabulary.
+Generate Training Data:
+
+For each sentence, generate pairs of context words and target words. This is done by defining a window size and extracting the context words for each target word.
+Build CBOW Model:
+
+Define a neural network using Keras Sequential model.
+Use Embedding and Lambda layers.
+Compile the model using categorical cross-entropy loss and Adam optimizer.
+Vector File Generation:
+
+Save the embeddings to a file and test it using gensim's KeyedVectors.
+Use CBOW Output:
+
+Load the trained word vectors from the file and use gensim to find similar words to a given word.
+This is the outline for the CBOW model implementation, which involves data preprocessing, tokenization, training a neural network, and then using word embeddings to perform tasks such as finding similar words.
