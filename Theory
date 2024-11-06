@@ -14,6 +14,8 @@ Evaluation Metrics: Final performance is assessed through accuracy and visual to
 
 
 
+
+
 In this assignment, a Feedforward Neural Network (MLP) will be built and trained to classify handwritten digits from the MNIST dataset using Keras with TensorFlow. The steps include loading the MNIST dataset, defining the neural network architecture with one hidden layer, training the model using Stochastic Gradient Descent (SGD), and evaluating its performance. Key objectives are to understand model training and evaluation, achieve over 90% accuracy on the dataset, and research methods to improve generalization. TensorFlow's Keras API simplifies constructing the model, where a Flatten layer converts each image to a vector and Dense layers with ReLU and softmax activations perform the classification.
 
 The model is compiled with the sparse_categorical_crossentropy loss function, ideal for multi-class problems, and is trained over 10 epochs, showing progressively improved accuracy and reduced loss, indicating effective learning. Results are visualized through graphs of training loss and accuracy, and the evaluate() method is used to check the model’s accuracy on test data. With a confusion matrix, the classification performance across each digit can be observed. Overall, this exercise showcases building a neural network model from scratch, training it, and achieving desired accuracy in image classification.
@@ -38,6 +40,9 @@ Loss Function: The function that measures how well the model’s predictions mat
 Optimizer: An algorithm that adjusts the model's weights to minimize the loss function. Here, SGD (Stochastic Gradient Descent) is used to iteratively improve model accuracy through backpropagation.
 
 These elements form the backbone of a CNN model, helping it to learn from the MNIST dataset and accurately classify handwritten digits.
+
+
+
 
 
 Here are the important definitions from the assignment:
@@ -65,6 +70,9 @@ Recall: The fraction of true positive predictions (correctly identified anomalie
 Accuracy: The fraction of correct predictions (both true positives and true negatives) made by the model out of all predictions.
 
 This assignment focuses on using an Autoencoder for anomaly detection by training it to recognize normal patterns in data and flagging deviations as anomalies. An Autoencoder is a type of neural network that compresses data through an Encoder into a lower-dimensional latent representation and reconstructs it via a Decoder. When trained on normal data, it learns to accurately recreate these patterns, minimizing reconstruction error. However, when encountering anomalies, the reconstruction error is higher, allowing these instances to be flagged as abnormal. The ECG dataset (with labels 0 for anomalies and 1 for normal) is used here, specifically scaling the Time and Amount columns with StandardScaler for better model performance. After training, a threshold for reconstruction error is set to classify new data as either normal or anomalous. This threshold-based approach helps to identify anomalies effectively. Evaluating model performance through metrics like accuracy, precision, and recall is essential, as imbalanced data may result in high accuracy but lower precision and recall. To improve these metrics, exploring variations in the model’s architecture, adding features, or adjusting hyperparameters can be beneficial.
+
+
+
 
 
 Important Definitions and Concepts for Assignment 5 (CBOW Model)
